@@ -2,6 +2,9 @@
    SHARED THEME SETTINGS
    ========================================================================== */
 
+/* Import Google Fonts for professional biomedical theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700&display=swap');
+
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
@@ -13,35 +16,35 @@ $doc-font-size              : 16;
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* System typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+/* Modern professional typefaces for biomedical data science */
+$serif                      : "Playfair Display", Georgia, Times, serif;
+$sans-serif                 : "Inter", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$monospace                  : "JetBrains Mono", Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
-$helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
+$helvetica                  : "Inter", Helvetica, "Helvetica Neue", Arial, sans-serif;
 
 /* Serif typefaces */
-$georgia                    : Georgia, serif;
-$times                      : Times, serif;
-$bodoni                     : "Bodoni MT", serif;
-$calisto                    : "Calisto MT", serif;
-$garamond                   : Garamond, serif;
+$georgia                    : "Playfair Display", Georgia, serif;
+$times                      : "Playfair Display", Times, serif;
+$bodoni                     : "Playfair Display", "Bodoni MT", serif;
+$calisto                    : "Playfair Display", "Calisto MT", serif;
+$garamond                   : "Playfair Display", Garamond, serif;
 
-/* Type scale */
-$type-size-1                : 2.441em;  // ~39.056px
-$type-size-2                : 1.953em;  // ~31.248px
-$type-size-3                : 1.563em;  // ~25.008px
-$type-size-4                : 1.25em;   // ~20px
-$type-size-5                : 1em;      // ~16px
-$type-size-6                : 0.75em;   // ~12px
-$type-size-7                : 0.6875em; // ~11px
-$type-size-8                : 0.625em;  // ~10px
+/* Type scale - optimized for readability */
+$type-size-1                : 2.5em;    // ~40px - Main headers
+$type-size-2                : 2em;      // ~32px - Section headers  
+$type-size-3                : 1.6em;    // ~25.6px - Subsection headers
+$type-size-4                : 1.25em;   // ~20px - Large text
+$type-size-5                : 1em;      // ~16px - Body text
+$type-size-6                : 0.875em;  // ~14px - Small text
+$type-size-7                : 0.75em;   // ~12px - Caption text
+$type-size-8                : 0.625em;  // ~10px - Tiny text
 
 $global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+$header-font-family         : $serif;
+$caption-font-family        : $sans-serif;
 
 /* ==========================================================================
    Breakpoints

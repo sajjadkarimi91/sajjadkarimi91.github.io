@@ -41,3 +41,214 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* ==========================================================================
+   BIOMEDICAL SIGNAL PROCESSING THEME ENHANCEMENTS
+   ========================================================================== */
+
+/* Enhanced Author Profile Styling */
+.author__avatar {
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+    }
+}
+
+.author__content {
+    h3 {
+        color: var(--global-text-color);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .author__bio {
+        color: var(--global-text-color-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Enhanced Navigation Styling */
+.masthead {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--global-border-color);
+    
+    .site-title {
+        color: var(--accent-color) !important;
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+}
+
+.greedy-nav {
+    a {
+        color: var(--global-masthead-link-color);
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:hover {
+            color: var(--accent-color);
+        }
+        
+        &.site-title:hover {
+            color: var(--global-masthead-link-color-hover) !important;
+        }
+    }
+}
+
+/* Enhanced Page Content */
+.page__content {
+    h2 {
+        color: #2563eb;
+        border-bottom: 2px solid #7c3aed;
+        padding-bottom: 0.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    
+    h3 {
+        color: #059669;
+        margin-top: 1.5rem;
+        font-weight: 600;
+    }
+    
+    h4 {
+        color: #7c3aed;
+        font-weight: 600;
+    }
+}
+
+/* Enhanced Links */
+a {
+    color: var(--global-link-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        color: var(--global-link-color-hover);
+        text-decoration: underline;
+        text-decoration-color: #7c3aed;
+    }
+}
+
+/* Publication Cards Enhancement */
+.list__item {
+    background: var(--card-background-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-color: var(--accent-color);
+    }
+    
+    .archive__item-title {
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        
+        a {
+            color: inherit;
+            
+            &:hover {
+                color: var(--global-link-color-hover);
+            }
+        }
+    }
+    
+    .archive__item-excerpt {
+        color: var(--global-text-color-light);
+        line-height: 1.6;
+    }
+}
+
+/* Enhanced Buttons */
+.btn {
+    background: var(--button-primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &:hover {
+        background: var(--button-primary-hover-color);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+}
+
+/* Enhanced Code Blocks */
+.highlight {
+    background: var(--global-code-background-color) !important;
+    border: 1px solid var(--global-border-color);
+    border-radius: var(--border-radius);
+    
+    code {
+        color: var(--global-code-text-color);
+        font-family: var(--monospace);
+        font-size: 0.9rem;
+    }
+}
+
+/* Professional List Styling */
+ul li {
+    margin-bottom: 0.5rem;
+    
+    strong {
+        color: #2563eb;
+    }
+}
+
+/* Enhanced Social Media Icons */
+.author__urls {
+    .fa {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        &:hover {
+            transform: scale(1.2);
+            color: var(--accent-color);
+        }
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .page__content {
+        h2 {
+            font-size: 1.4rem;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* Enhanced Footer */
+.page__footer {
+    background: var(--global-footer-bg-color);
+    border-top: 1px solid var(--global-border-color);
+    
+    .page__footer-copyright {
+        color: var(--global-text-color-light);
+    }
+}

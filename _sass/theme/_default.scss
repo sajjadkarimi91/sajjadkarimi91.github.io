@@ -1,47 +1,82 @@
 /* ==========================================================================
-   DEFAULT THEME
+   BIOMEDICAL SIGNAL PROCESSING THEME
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : #9ba1a6;
-$lighter-gray               : mix(#fff, $gray, 90%);
+/* Biomedical color palette inspired by heart signals (ECG) and brain signals (EEG) */
+// Primary blues - inspired by medical technology and data visualization
+$neural-blue                : #2563eb;  // Deep medical blue
+$signal-blue                : #3b82f6;  // Bright signal blue
+$data-blue                  : #60a5fa;  // Light data blue
+$tech-blue                  : #1e40af;  // Dark tech blue
 
-/* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+// Medical greens - inspired by heart monitoring and medical equipment
+$medical-green              : #059669;  // Medical green
+$heart-green                : #10b981;  // Heart monitor green
+$bio-green                  : #34d399;  // Light bio green
 
-/* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
-$masthead-height            : 70px;
+// Neural purples - inspired by brain activity and neural networks
+$neural-purple              : #7c3aed;  // Neural network purple
+$brain-purple               : #8b5cf6;  // Brain signal purple
+$synapse-purple             : #a78bfa;  // Light synapse purple
+
+// Professional grays - modern and clean
+$charcoal                   : #1f2937;  // Deep charcoal
+$slate                      : #374151;  // Medium slate
+$cool-gray                  : #6b7280;  // Cool gray
+$light-slate                : #9ca3af;  // Light slate
+$whisper                    : #f8fafc;  // Very light background
+$cloud                      : #f1f5f9;  // Light cloud
+
+/* Enhanced color variables for the biomedical theme */
+$gray                       : $cool-gray;
+$dark-gray                  : $slate;
+$darker-gray                : $charcoal;
+$light-gray                 : $light-slate;
+$lighter-gray               : #e2e8f0;
+
+/* Biomedical-specific color codes */
+$danger-color               : #ef4444;  // Medical alert red
+$info-color                 : $signal-blue;  // Information blue
+$notice-color               : $neural-purple;  // Notice purple
+$success-color              : $medical-green;  // Success green
+$warning-color              : #f59e0b;  // Warning amber
+
+/* Enhanced design settings */
+$border-radius              : 8px;  // More modern rounded corners
+$box-shadow                 : 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$global-transition          : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);  // Smooth transitions
+$masthead-height            : 80px;  // Slightly taller header
 $navicon-width              : 28px;
 $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Default light theme for the site */
+/* Biomedical Signal Processing Theme Variables */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #fff;
-    --global-footer-bg-color            : #f2f3f3;
+    --global-base-color                 : #{$cool-gray};
+    --global-bg-color                   : #{$whisper};
+    --global-footer-bg-color            : #{$cloud};
     --global-border-color               : #{$lighter-gray};
-    --global-dark-border-color          : #bdc1c4;
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #52adc8;
-    --global-link-color-hover           : mix(#000, #2f7f93, 25%);
-    --global-link-color-visited         : mix(#fff, #2f7f93, 25%);  
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);    
-    --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
-    --global-thead-color                : #{$lighter-gray};
+    --global-dark-border-color          : #cbd5e1;
+    --global-code-background-color      : #{$cloud};
+    --global-code-text-color            : #{$neural-purple};
+    --global-fig-caption-color          : #{$slate};
+    --global-link-color                 : #{$signal-blue};
+    --global-link-color-hover           : #{$neural-blue};
+    --global-link-color-visited         : #{$neural-purple};  
+    --global-masthead-link-color        : #{$slate};
+    --global-masthead-link-color-hover  : #{$neural-blue};    
+    --global-text-color                 : #{$charcoal};
+    --global-text-color-light           : #{$cool-gray};
+    --global-thead-color                : #{$cloud};
+    
+    /* New biomedical-specific variables */
+    --accent-color                      : #{$signal-blue};
+    --secondary-accent-color            : #{$medical-green};
+    --tertiary-accent-color             : #{$neural-purple};
+    --card-background-color             : #ffffff;
+    --card-border-color                 : #{$lighter-gray};
+    --button-primary-color              : #{$signal-blue};
+    --button-primary-hover-color        : #{$neural-blue};
+    --highlight-color                   : #{$brain-purple};
 }
