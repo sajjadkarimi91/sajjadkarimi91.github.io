@@ -1,0 +1,80 @@
+/* CLEAN MINIMAL OVERRIDE CSS */
+
+/* Reset everything */
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 4px !important;
+}
+
+/* Clean body */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    background: #ffffff !important;
+    color: #374151 !important;
+    line-height: 1.6 !important;
+}
+
+/* Clean headers */
+h1, h2, h3, h4, h5, h6 {
+    border: none !important;
+    background: none !important;
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+    margin: 1.5rem 0 1rem 0 !important;
+    padding: 0 !important;
+}
+
+h2 { color: #2563eb !important; }
+h3 { color: #374151 !important; }
+
+/* Clean navigation */
+.masthead {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+}
+
+.site-title {
+    color: #2563eb !important;
+    font-weight: 700 !important;
+}
+
+/* Clean links */
+a {
+    color: #2563eb !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+}
+
+/* Clean sidebar */
+.sidebar, .author__profile {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Clean content */
+.page__content {
+    background: #ffffff !important;
+    padding: 2rem !important;
+}
+
+/* Clean publication items */
+.list__item, .archive__item {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+/* Hide busy elements */
+.page__meta, .page__date, .page__taxonomy {
+    display: none !important;
+} 

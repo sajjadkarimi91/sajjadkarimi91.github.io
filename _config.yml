@@ -6,25 +6,67 @@
 # `jekyll serve -l -H localhost`. If you change this file, please restart the 
 # server process.
 
+# Clean Jekyll Configuration
+title: "Sajjad Karimi"
+name: "Sajjad Karimi"
+description: "Postdoctoral Fellow in Biomedical Informatics | Senior Data Scientist | Machine Learning & Signal Processing Expert"
+url: https://sajjadkarimi91.github.io
+baseurl: ""
+repository: "sajjadkarimi91/sajjadkarimi91.github.io"
+
+# Use minimal theme instead of Academic Pages
+theme: minima
+remote_theme: jekyll/minima
+
+# Basic settings
+locale: "en-US"
+timezone: UTC
+encoding: "utf-8"
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Author information  
+author:
+  name: "Sajjad Karimi"
+  email: "sajjadkarimi91@gmail.com"
+  bio: "Postdoctoral Fellow in Biomedical Informatics at Emory University | Expert in Statistical Signal Processing, Machine Learning, and Biomedical Signal Analysis"
+  location: "Decatur, GA, USA"
+  employer: "Emory University School of Medicine"
+  github: "sajjadkarimi91"
+  linkedin: "sajjad-karimi-67483b99"
+  googlescholar: "https://scholar.google.com/citations?user=nIUVskwAAAAJ&hl=en"
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
 # Basic Site Settings
-locale                   : "en-US"
 site_theme               : "default"
 minimal_mistakes_skin    : "default"
-title                    : "Sajjad Karimi"
 title_separator          : "-"
-name                     : &name "Sajjad Karimi"
-description              : &description "Postdoctoral Fellow in Biomedical Informatics | Senior Data Scientist | Machine Learning & Signal Processing Expert"
-url                      : https://sajjadkarimi91.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "sajjadkarimi91/sajjadkarimi91.github.io"
-
-# Site Author - The following control what appear as part of the author content on the side bar.
-#               If a field is blank the icon and link will not appear, otherwise it will be shown.
-#               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Sajjad Karimi"
   pronouns         : # example: "she/her"  
   bio              : "Postdoctoral Fellow in Biomedical Informatics at Emory University | Expert in Statistical Signal Processing, Machine Learning, and Biomedical Signal Analysis"
   location         : "Decatur, GA, USA"
@@ -35,7 +77,6 @@ author:
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=nIUVskwAAAAJ&hl=en"
   impactstory      : # URL
   orcid            : # URL
   semantic         : # URL
@@ -47,7 +88,6 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "sajjadkarimi91"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -61,8 +101,6 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "sajjad-karimi-67483b99"
-  mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
   soundcloud       : # Username
@@ -172,7 +210,6 @@ exclude:
   - assets/js/vendor
   - CHANGELOG
   - Capfile
-  - config
   - Dockerfile
   - Gemfile
   - Gruntfile.js
@@ -218,9 +255,6 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
-  publications:
-    output: true
-    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -257,7 +291,6 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comments: true
   # _publications
   - scope:
       path: ""
@@ -293,7 +326,6 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
