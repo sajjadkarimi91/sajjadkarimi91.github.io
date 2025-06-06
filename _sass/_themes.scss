@@ -2,9 +2,6 @@
    SHARED THEME SETTINGS
    ========================================================================== */
 
-/* Import Google Fonts for professional biomedical theme */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700&display=swap');
-
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
@@ -17,20 +14,20 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* Modern professional typefaces for biomedical data science */
-$serif                      : "Playfair Display", Georgia, Times, serif;
-$sans-serif                 : "Inter", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : "JetBrains Mono", Monaco, Consolas, "Lucida Console", monospace;
+$serif                      : Georgia, "Times New Roman", Times, serif;
+$sans-serif                 : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$monospace                  : "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
 /* Sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
-$helvetica                  : "Inter", Helvetica, "Helvetica Neue", Arial, sans-serif;
+$helvetica                  : "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 /* Serif typefaces */
-$georgia                    : "Playfair Display", Georgia, serif;
-$times                      : "Playfair Display", Times, serif;
-$bodoni                     : "Playfair Display", "Bodoni MT", serif;
-$calisto                    : "Playfair Display", "Calisto MT", serif;
-$garamond                   : "Playfair Display", Garamond, serif;
+$georgia                    : Georgia, serif;
+$times                      : "Times New Roman", Times, serif;
+$bodoni                     : "Bodoni MT", serif;
+$calisto                    : "Calisto MT", serif;
+$garamond                   : Garamond, serif;
 
 /* Type scale - optimized for readability */
 $type-size-1                : 2.5em;    // ~40px - Main headers
