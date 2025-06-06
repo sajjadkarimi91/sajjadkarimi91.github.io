@@ -1,0 +1,466 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Freeman Curriculum Vitae
+% XeLaTeX Template
+% Version 3.0 (September 3, 2021)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Alessandro Plasmati
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%!TEX program = xelatex
+% NOTE: this template must be compiled with XeLaTeX rather than PDFLaTeX
+% due to the custom fonts used. The line above should ensure this happens
+% automatically, but if it doesn't, your LaTeX editor should have a simple toggle
+% to switch to using XeLaTeX.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	10pt, % Default font size, can be between 8pt and 12pt
+]{FreemanCV}
+
+\columnratio{0.55, 0.45} % Widths of the two columns, specified here as a ratio summing to 1 to correspond to percentages; adjust as needed for your content 
+
+% Headers and footers can be added with the following commands: \lhead{}, \rhead{}, \lfoot{} and \rfoot{}
+% Example right footer:
+%\rfoot{\textcolor{headings}{\sffamily Last update: \today. Typeset with Xe\LaTeX}}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{paracol}{2} % Begin two-column mode
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME AND CURRICULUM VITAE TITLE
+%----------------------------------------------------------------------------------------
+
+\parbox[][0.11\textheight][c]{\linewidth}{ % Box to hold your name and CV title; change the fixed height as needed to match the colored box to the right
+	\centering % Horizontally center text
+	
+	{\sffamily\Huge Sajjad Karimi} % Your name
+	
+	\medskip % Vertical whitespace
+	
+	{\cursivefont\Huge\textcolor{headings}{Curriculum Vitae}}
+	
+	\vfill % Push content to the top of the box
+}
+
+%----------------------------------------------------------------------------------------
+%	MAJOR RESEARCH PROJECT
+%----------------------------------------------------------------------------------------
+
+\section{Doctoral Research}
+
+{\raggedright\textbf{``A New Coupled HMM Framework \& Applications in Multi-channel Brain Signal Processing"}\par}
+
+\medskip % Vertical whitespace
+
+My research focuses on the Latent Structure Influence Model (LSIM), a type of CHMM. Our contributions are divided into theory and application parts. In the theory part, we proposed a new fast approximate inference algorithm for LSIMs. Then we proved the convergence of the proposed learning framework and developed an EM algorithm for parameter re-estimation.
+In the application part, we proposed two new applications using LSIMs including channel fusion for improving sleep staging performance and a new estimator for brain connectivity.
+We found that LSIM had better performance than HMMs and CHMMs.
+
+
+\bigskip % Extra vertical whitespace before the next section
+%\negthinspace
+
+%----------------------------------------------------------------------------------------
+%	SKILLS DESCRIPTION
+%----------------------------------------------------------------------------------------
+
+\section{Areas of interest}
+
+My experience includes processing \& modeling biomedical signals \& financial time series using the following areas:
+
+\begin{itemize}
+
+\item  Statistical Signal Processing
+
+\item Machine Learning
+   
+\item Coupled Hidden Markov Models
+
+\item Statistical Inference \& Modeling
+
+\item Mathematical optimization
+
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+% Each job is added with a \jobentry command. Below is an empty one to use as a template:
+
+%\jobentry
+%	{} % Duration
+%	{} % FT/PT (full time or part time)
+%	{} % Employer
+%	{} % Job title
+%	{} % Description
+
+% All 5 parameters must be supplied but any can be empty if you don't need them
+
+%------------------------------------------------
+
+\jobentry
+	{October 2024 - Present} % Duration
+	{FT} % FT/PT (full time or part time)
+	{Emory University, School of Medicine, \\ Department of Biomedical Informatics} % Employer
+	{Postdoctoral Fellow}% | Senior Data Scientist in Biomedical Signal Processing} % Job title
+	{As a Postdoctoral Fellow in Biomedical Informatics, I contribute to advancing health diagnostics by analyzing and modeling complex multi-channel biomedical signals, including brain and heart data. My work leverages statistical signal processing, machine learning, and advanced modeling techniques to extract biomarkers that improve cardiovascular and neurophysiological health assessments. I also mentor students, promote interdisciplinary collaboration, and aim to publish research that drives innovation in biomedical signal processing.} % Description
+
+%------------------------------------------------
+
+\jobentry
+	{April 2022  -- September 2024} % Duration
+	{FT} % FT/PT (full time or part time)
+	{Charisma Financial Information Processing} % Employer
+	{Senior Data Scientist \& Quantitative Analyst} % Job title
+	{Developed and implemented an AI-driven portfolio management system using MLOps, machine learning models, MDP, and Dynamic Bayesian Networks. Applied statistical models to predict and analyze the options market, achieving a 10\% excess return on a \$30,000 test fund in four months. Optimized portfolios using the Black-Litterman model, successfully managing a \$2.5 million fund with a \$23 million turnover over two years.} % Description
+
+%\jobentry
+%	{Oct 2020 - Present} % Duration
+%	{FT} % FT/PT (full time or part time)
+%	{Charisma Financial Group} % Employer
+%	{Senior Data Scientist \& Quantitative Analyst} % Job title
+%	{To provide services to our clients, I began using MLOps design for our AI portfolio management system. I also use statistical models and machine learning to predict \& analyze the options market. We have released the first algorithmically managed test fund of about 30000 dollars and improved the index by about 10\% excess return over four months.} % Description
+%
+%%------------------------------------------------
+%
+%\jobentry
+%	{Jan 2016 -- Jul 2022} % Duration
+%	{FT} % FT/PT (full time or part time)
+%	{Tadbirgaran Farda brokerage} % Employer
+%	{Senior Data Scientist \& Quantitative Analyst} % Job title
+%	{We designed and developed a new AI-based portfolio management system using machine-learning models, MDP, and Dynamic Bayesian Networks.
+%Black-Litterman model was used to optimize portfolios in our active management system.
+%We tested our system on a 2.5 million dollar fund for two years and successfully tracked the market index with about 23 million dollar turnover.} % Description
+
+%------------------------------------------------
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Journal Publications}
+
+%------------------------------------------------
+
+\textbf{Karimi, S.}, \& Shamsollahi, M. B. (2023). Tractable maximum likelihood estimation for latent structure influence models with applications to eeg \& ecog processing.  \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence}.
+\medskip % Vertical whitespace
+
+\textbf{Karimi, S.}, \& Shamsollahi, M. B. (2020). Tractable inference and observation likelihood evaluation in latent structure influence models. \textit{IEEE Transactions on Signal Processing}, 68, 5736-5745.
+\medskip % Vertical whitespace
+
+Kazemnejad, A. , \textbf{Karimi, S.}, Gordany, P., Clifford, G. D., \& Sameni, R. (2024). An open-access simultaneous electrocardiogram and phonocardiogram database. \textit{Physiological Measurement}, 45(5), 055005.
+\medskip % Vertical whitespace
+
+\textbf{Karimi, S.}, \& Shamsollahi, M. B. (2022). A New Post-Processing Method Using Latent Structure Influence Models for Channel Fusion in Automatic Sleep Staging. \textit{IEEE Journal of Biomedical and Health Informatics}.
+\medskip % Vertical whitespace
+
+\textbf{Karimi, S.}, {Karimi, Sh.}, Shah, A. J, Clifford, G. D \& Sameni, R. (2024). Electromechanical Dynamics of the Heart: A Study of Cardiac Events Hysteresis During Stress Test. \textit{arXiv preprint arXiv:2410.19667}, \textit{Under Review at IEEE Journal of Biomedical and Health Informatics}.
+\medskip % Vertical whitespace
+
+Shahbazi, H., \textbf{Karimi, S.}, Hosseini, V., Yazgi, D., \& Torbatian, S. (2018). A novel regression imputation framework for Tehran air pollution monitoring network using outputs from WRF and CAMx models. \textit{Atmospheric Environment}, 187, 24-33.
+\medskip % Vertical whitespace
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\switchcolumn % Switch to the second (right) column
+
+%----------------------------------------------------------------------------------------
+%	COLORED CONTACT DETAILS BOX
+%----------------------------------------------------------------------------------------
+
+\parbox[top][0.11\textheight][c]{\linewidth}{ % Box to hold the colored box; change the fixed height as needed to match the box to the left
+	\colorbox{shade}{ % Create colored box and specify background color
+		\begin{supertabular}{@{\hspace{3pt}} p{0.05\linewidth} | p{0.775\linewidth}} % Start a table with two columns, the table will ensure everything is aligned
+			\raisebox{-1pt}{\faHome} &   10 Highland Lake Cir, Apt.115 Decatur, GA 30033, USA \\ % Address
+			\raisebox{-1pt}{\faPhone} & +1 (470) 707-6421 \\ % Phone number
+			\raisebox{-1pt}{\small\faEnvelope} & \href{mailto:sajjadkarimi91@gmail.com}{sajjadkarimi91@gmail.com} \\ % Email address
+			\raisebox{-1pt}{\small\faDesktop} & \href{https://scholar.google.com/citations?user=nIUVskwAAAAJ\&hl=en}{www.scholar.google.com/sajjad-karimi} \\ % Website
+			\raisebox{-1pt}{\faGithub} & \href{https://github.com/sajjadkarimi91}{www.github.com/sajjad-karimi} \\ % GitHub profile
+			\raisebox{-1pt}{\faLinkedinSquare} & \href{https://www.linkedin.com/in/sajjad-karimi-67483b99/}{www.linkedin.com/sajjad-karimi} \\ % LinkedIn profile
+			% See fontawesome.pdf in the Fonts folder for all icons you can use
+		\end{supertabular}
+	}
+	\vfill % Push content to the top of the box
+}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education} 
+
+% Each qualification entry is added with a \qualificationentry command. Below is an empty one to use as a template:
+
+%\qualificationentry
+%	{} % Duration
+%	{} % Degree
+%	{} % Honors, achievements or distinctions (e.g. first class honors)
+%	{} % Department
+%	{} % Institution
+
+% All 5 parameters must be supplied but any can be empty if you don't need them
+
+%------------------------------------------------
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+
+	%------------------------------------------------
+	
+%	\qualificationentry
+%		{2023 -- present} % Duration
+%		{\small Post Doctoral Fellow, Biomedical Engineering} % Degree
+%		{} % Honors, achievements or distinctions (e.g. first class honors)
+%		{Department of Biomedical Informatic} % Department
+%		{Emory University} % Institution
+
+	%------------------------------------------------
+	
+	\qualificationentry
+		{09/2015 -- 02/2023} % Duration
+		{\small Doctor of Philosophy, Electrical Engineering}%Bioelectric Engineering} % Degree
+		{} % Honors, achievements or distinctions (e.g. first class honors)
+		{Department of Electrical Engineering} % Department
+		{Sharif University of Technology} % Institution
+	
+	%------------------------------------------------
+	
+	\qualificationentry
+		{09/2012 -- 09/2014} % Duration
+		{\small Master of Science, Bioelectric Engineering} % Degree
+		{GPA: 18.59/20 (Rank: 2/12)} % Honors, achievements or distinctions (e.g. first class honors)
+		{Department of Electrical Engineering} % Department
+		{Sharif University of Technology} % Institution
+	
+	%------------------------------------------------
+	
+	\qualificationentry
+		{09/2008 -- 09/2012} % Duration
+		{\small Bachelor in Electrical Engineering} % Degree
+		{GPA: 18.20/20 (Rank: 1/32)} % Honors, achievements or distinctions (e.g. first class honors)
+		{Department of Electrical Engineering} % Department
+		{Shiraz University} % Institution
+	
+	%------------------------------------------------
+
+\end{supertabular}
+
+
+
+
+
+
+% I greatly enjoy carrying out fundamental physics research with potential practical applications.
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{Honors}
+
+% This section is laid out using a table. A \tableentry command adds lines with the following parameters:
+
+%\tableentry{Heading}{Content}{spaceafter}
+% All 3 parameters must be supplied but any can be empty if you don't need them
+% A "spaceafter" value in the third parameter will add some vertical space -- this is to be used between headings, leave it empty for no extra space
+
+%------------------------------------------------
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+	
+	%------------------------------------------------
+	
+	\tableentry{2021}{\small \textbf{CFA Level 1}}{}
+	\tableentry{}{\textit{CFA Institute Investment Foundations Program}}{spaceafter}
+	
+	%------------------------------------------------
+
+	\tableentry{2022}{\small \textbf{1$^{th}$ Rank Oral Presentation Bioelectrics Paper}}{}
+	\tableentry{}{\textit{In the 29th ICBME Conference}}{spaceafter}
+	
+	%------------------------------------------------
+	
+	\tableentry{2018}{\small \textbf{Designer \& Referee of stock prediction competition}}{}
+	\tableentry{}{\textit{Iran's first AI-based financial prediction competition}}{spaceafter}
+	
+	%------------------------------------------------
+	 %https://olympiad.sanjesh.org/Fa/ResultDetail.aspx?CID=25&BID=6
+       \tableentry{2012}{\small \textbf{10$^{th}$ Rank Scientific Olympiads of Electical Engineering }}{}
+	\tableentry{}{\textit{17$^{th}$ Scientific Olympiads for Iran University Students}}{}
+	
+	%------------------------------------------------
+	
+	
+\end{supertabular}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Computer Skills} 
+
+% This section is laid out using a table. A \tableentry command adds lines with the following parameters:
+
+%\tableentry{Heading}{Content}{spaceafter}
+% All 3 parameters must be supplied but any can be empty if you don't need them
+% A "spaceafter" value in the third parameter will add some vertical space -- this is to be used between headings, leave it empty for no extra space
+
+%------------------------------------------------
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+	
+	%------------------------------------------------
+	
+	%\tableentry{Beginner}{C\#, SQL}{spaceafter}
+	
+	%------------------------------------------------
+	
+	\tableentry{Intermediate}{Python, C, MongoDB}{}
+	\tableentry{}{Docker, MLOps, Git}{}
+	%\tableentry{}{ARM Keil MDK}{}
+	
+	%------------------------------------------------
+	
+	\tableentry{Expert}{MATLAB, Algorithm, \LaTeX}{spaceafter}
+	
+	%------------------------------------------------
+	
+\end{supertabular}
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\section{References}
+
+%\textit{References available on request} % Uncomment if you'd rather not include references and remove the section below
+
+%------------------------------------------------
+
+% This section is laid out using a table. A \tableentry command adds lines with the following parameters:
+
+%\tableentry{Heading}{Content}{spaceafter}
+% All 3 parameters must be supplied but any can be empty if you don't need them
+% A "spaceafter" value in the third parameter will add some vertical space -- this is to be used between headings, leave it empty for no extra space
+
+%------------------------------------------------
+
+
+\begin{supertabular}{r l} % Start a table with two columns, the table will ensure everything is aligned
+	
+	%------------------------------------------------
+	
+	\tableentry{}{\textbf{Dr. Mohammad B. Shamsollahi}}{}
+	\tableentry{Position}{Professor}{}
+	\tableentry{Employer}{\href{https://www.ee.sharif.edu/en/}{Department of Electrical Engineering}}{}
+	\tableentry{}{\href{https://en.sharif.edu/}{\textit{Sharif University of Technology}}}{}
+	\tableentry{Email}{\href{mailto:mbshams@sharif.edu}{mbshams@sharif.edu}}{spaceafter}
+	%\tableentry{Phone}{+98 2166164356 (Work)}{}
+
+
+	%------------------------------------------------
+	
+	\\ % Additional vertical whitespace between the references
+	
+	%------------------------------------------------
+	\tableentry{}{\textbf{Dr. Reza Sameni}}{}
+	\tableentry{Position}{Associate Professor}{}
+	\tableentry{Employer}{\href{https://med.emory.edu/departments/biomedical-informatics/index.html}{Department of Biomedical Informatics}}{}
+	\tableentry{}{\href{https://www.emory.edu/home/index.html}{\textit{Emory University}}}{}
+	\tableentry{Email}{\href{mailto:rsameni@dbmi.emory.edu}{rsameni@dbmi.emory.edu}}{}
+	%\tableentry{Phone}{+98 2166165933 (Work)}{}
+	
+ 	%------------------------------------------------
+
+	\\ % Additional vertical whitespace between the references
+
+	%------------------------------------------------
+	
+	\tableentry{}{\textbf{Dr. Emad Fatemizadeh}}{}
+	\tableentry{Position}{Associate Professor}{}
+	\tableentry{Employer}{\href{https://www.ee.sharif.edu/en/}{Department of Electrical Engineering}}{}
+	\tableentry{}{\href{https://en.sharif.edu/}{\textit{Sharif University of Technology}}}{}
+	\tableentry{Email}{\href{mailto:fatemizadeh@sharif.edu}{fatemizadeh@sharif.edu}}{}
+
+
+%	\\ % Additional vertical whitespace between the references
+%
+%	%------------------------------------------------
+%	
+%	\tableentry{}{\textbf{Dr. Bijan Vosoughi-Vahdat}}{}
+%	\tableentry{Position}{Associate Professor}{}
+%	\tableentry{Employer}{\href{https://www.ee.sharif.edu/en/}{Department of Electrical Engineering}}{}
+%	\tableentry{}{\href{https://en.sharif.edu/}{\textit{Sharif University of Technology}}}{}
+%	\tableentry{Email}{\href{mailto:vahdat@sharif.edu}{vahdat@sharif.edu}}{}
+%	%\tableentry{Phone}{+98 2166165933 (Work)}{}
+%
+%      %\\ % Additional vertical whitespace between the references
+      
+
+	
+	%------------------------------------------------
+	
+\end{supertabular}
+
+\medskip % Extra vertical whitespace before the next section
+
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Conference Publications}
+
+%------------------------------------------------
+
+%\textbf{Freeman, G. R.} (1996). Chemistry of Multiply Charged Negative Molecular Ions and Clusters in the Gas Phase:  Terrestrial and in Intense Galactic Magnetic Fields. \textit{The Journal of Physical Chemistry}, \textit{100}(11), 4331-4338.
+\textbf{Karimi, S.}, \& Shamsollahi, M. B. "Coupled Hidden Markov Models for Estimating Multivariate Transfer Entropy in Neural Mass Models: A Simulation Study." (2022) In \textit{29th Iranian Conference on Biomedical Engineering (ICBME)}.
+\medskip % Vertical whitespace
+
+Ahmadi, A. K., Moradi, P., Malihi, M., \textbf{Karimi, S.}, \& Shamsollahi, M. B. (2015). Heart Rate monitoring during physical exercise using wrist-type photoplethysmographic (PPG) signals. In \textit{37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)} (pp. 6166-6169). IEEE.
+\medskip % Vertical whitespace
+
+
+\textbf{Karimi, S.}, Molaee-Ardekani, B., Shamsollahi, M. B., Leroy, C., \& Derambure, P. (2013). Automatic ocular correction in EEG recordings using maximum likelihood estimation. In  \textit{IEEE International Symposium on Signal Processing and Information Technology} (pp. 000164-000169). IEEE.
+\medskip % Vertical whitespace
+
+Babolhavaeji, A., \textbf{Karimi, S.}, Ghaffari, A.,Hamidinekoo, A., \& Vosoughi-Vahdat, B. "Optimal temporal resolution for decoding of visual stimuli in inferior temporal cortex." (2014) In \textit{21st Iranian Conference on Biomedical Engineering (ICBME)}, pp. 109-112. IEEE.
+\medskip % Vertical whitespace
+
+
+\medskip % Extra whitespace before the next section
+
+%----------------------------------------------------------------------------------------
+
+\end{paracol} % End two-column mode
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
