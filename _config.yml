@@ -9,6 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
+minimal_mistakes_skin    : "default"
 title                    : "Sajjad Karimi"
 title_separator          : "-"
 name                     : &name "Sajjad Karimi"

@@ -25,37 +25,100 @@
     "vendor/magnific-popup/magnific-popup"
 ;
 
-/* Clean Minimal Biomedical Theme */
-.page__content h2 {
-    color: #2563eb;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+/* COMPLETE STYLE RESET FOR CLEAN APPEARANCE */
+
+/* Reset Academic Pages busy styling */
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
 }
 
-.page__content h3 {
-    color: #374151;
-    font-weight: 500;
-    margin-top: 1.5rem;
+/* Clean page layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    line-height: 1.6 !important;
+    color: #374151 !important;
 }
 
-.page__content h4 {
-    color: #7c3aed;
-    font-weight: 600;
+/* Clean headers */
+h1, h2, h3, h4, h5, h6 {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
 }
 
-a:hover {
-    text-decoration-color: #7c3aed;
-}
+.page__content h1 { color: #1f2937 !important; }
+.page__content h2 { color: #2563eb !important; }
+.page__content h3 { color: #374151 !important; }
+.page__content h4 { color: #6b7280 !important; }
 
-ul li strong {
-    color: #2563eb;
-}
-
-.author__avatar img {
-    border: 3px solid #2563eb;
+/* Clean navigation */
+.masthead {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
 }
 
 .masthead .site-title {
     color: #2563eb !important;
+    font-weight: 700 !important;
+}
+
+/* Clean sidebar */
+.sidebar {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.author__avatar img {
+    border: 2px solid #e5e7eb !important;
+    border-radius: 50% !important;
+    box-shadow: none !important;
+}
+
+/* Clean links */
+a {
+    color: #2563eb !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+}
+
+/* Clean publication list */
+.list__item {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: none !important;
+}
+
+.archive__item-title {
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+}
+
+/* Remove all fancy effects */
+.btn {
+    background: #2563eb !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+
+/* Clean footer */
+.page__footer {
+    background: #f9fafb !important;
+    border-top: 1px solid #e5e7eb !important;
 } 
