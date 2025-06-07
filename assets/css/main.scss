@@ -1,12 +1,26 @@
+---
+---
+
+/*
+ * This file controls what is imported from /_sass
+ *
+ * Note that the files are processed in the order they are imported, so they are partly
+   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ */
+
 @import
     "vendor/breakpoint/breakpoint",
+
     "themes",
     "theme/default",
     "theme/dark",
+
     "include/mixins",
     "vendor/susy/susy",
+
     "layout/reset",
     "layout/base",
+
     "include/utilities",
     "layout/tables",
     "layout/buttons",
@@ -15,50 +29,15 @@
     "layout/navigation",
     "layout/footer",
     "syntax",
+
     "layout/forms",
+
     "layout/page",
     "layout/archive",
     "layout/sidebar",
+
     "vendor/font-awesome/fontawesome",
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
-
-/* Biomedical Theme Enhancements */
-.page__content h2 {
-    color: #2563eb;
-    border-bottom: 2px solid #7c3aed;
-    padding-bottom: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.page__content h3 {
-    color: #059669;
-    margin-top: 1.5rem;
-    font-weight: 600;
-}
-
-.page__content h4 {
-    color: #7c3aed;
-    font-weight: 600;
-}
-
-a:hover {
-    text-decoration-color: #7c3aed;
-}
-
-ul li strong {
-    color: #2563eb;
-}
-
-.author__avatar img {
-    border: 3px solid #2563eb;
-}
-
-.masthead .site-title {
-    color: #2563eb !important;
-    font-weight: 700;
-} 
