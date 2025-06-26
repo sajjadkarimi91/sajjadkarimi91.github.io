@@ -13,7 +13,7 @@ title                    : "Sajjad Karimi"
 title_separator          : "-"
 name                     : &name "Sajjad Karimi"
 description              : &description "Postdoctoral Fellow in Biomedical Informatics | Senior Data Scientist | Machine Learning & Signal Processing Expert"
-url                      : https://sajjadkarimi91.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : https://sajjadkarimi.com # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "sajjadkarimi91/sajjadkarimi91.github.io"
 
