@@ -160,6 +160,11 @@ include:
   - files
 exclude:
   - "*.sublime-project"
+  # project sources that must not reach the published site
+  - assets/projects/qt-rr-dynamics/dev.html
+  - data
+  - plans
+  - scripts
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
@@ -217,6 +222,9 @@ collections:
   teaching:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
   publications:
     output: true
     permalink: /:collection/:path/
@@ -266,6 +274,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project-app
+      author_profile: false
+      share: false
+      comments: false
   # _portfolio
   - scope:
       path: ""
