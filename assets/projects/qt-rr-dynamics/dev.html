@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+  Development harness only - excluded from the Jekyll build via _config.yml.
+  It loads the same CSS, JS and data as the real page so the panels can be
+  driven without a Ruby toolchain. It does NOT reproduce the site template,
+  so it cannot be used to check layout, routing or theming integration.
+-->
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QT-RR Dynamics (dev harness)</title>
+<style>
+  /* Minimal stand-ins for the site variables the app reads. */
+  :root {
+    --global-bg-color: #fff;
+    --global-text-color: #494e52;
+    --global-text-color-light: #9ba1a6;
+    --global-border-color: #e8e9ea;
+    --global-link-color: #52adc8;
+    --global-footer-bg-color: #f2f3f3;
+  }
+  html[data-theme="dark"] {
+    --global-bg-color: #474747;
+    --global-text-color: #ffffff;
+    --global-text-color-light: #bdc1c4;
+    --global-border-color: #bdc1c4;
+    --global-link-color: #0ea1c5;
+    --global-footer-bg-color: #474747;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+  }
+  .dev-bar {
+    padding: .5rem 1rem;
+    border-bottom: 1px solid var(--global-border-color);
+    font-size: .8rem;
+  }
+</style>
+<link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+<div class="dev-bar">
+  dev harness ·
+  <button type="button" id="dev-theme">toggle theme</button>
+</div>
+<div id="main">
+  <div class="project-app">
+    <div class="project-app__content" id="dev-content">Loading page markup&hellip;</div>
+  </div>
+</div>
+<script>
+  document.getElementById('dev-theme').addEventListener('click', function () {
+    var root = document.documentElement;
+    if (root.getAttribute('data-theme') === 'dark') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', 'dark');
+  });
+</script>
+<script type="module">
+  /* Pull the app markup straight out of the collection document so the harness
+     cannot drift from the real page. */
+  const source = new URL('../../../_projects/qt-rr-dynamics.md', import.meta.url);
+  const text = await (await fetch(source)).text();
+  const body = text.replace(/^---[\s\S]*?\n---\n/, '');
+  document.getElementById('dev-content').innerHTML = body;
+  await import('./js/app.js');
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+projects_css: true
+---
+
+{% include base_path %}
+
+<p>Interactive companions to my research — data explorers and visualisations that
+go with the papers and posters.</p>
+
+<div class="project-cards">
+  {% assign items = site.projects | sort: "order" %}
+  {% for item in items %}
+    <a class="project-card" href="{{ base_path }}{{ item.url }}">
+      {% if item.card_image %}
+        <img class="project-card__image" src="{{ base_path }}{{ item.card_image }}" alt="">
+      {% endif %}
+      <span class="project-card__body">
+        <span class="project-card__title">{{ item.title }}</span>
+        {% if item.subtitle %}<span class="project-card__subtitle">{{ item.subtitle }}</span>{% endif %}
+        {% if item.venue %}<span class="project-card__venue">{{ item.venue }}</span>{% endif %}
+      </span>
+    </a>
+  {% endfor %}
+</div>

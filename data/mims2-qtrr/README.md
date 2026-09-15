@@ -38,7 +38,7 @@ One row per accepted beat in the window, already synced to the ECG file.
 | `rr_ms`, `qt_ms`, `tamp_mv` | per-beat RR, QT, T-wave amplitude (may be `NaN`) |
 | `rr_ms_smooth`, `qt_ms_smooth`, `tamp_mv_smooth` | 41-beat centred moving mean — **use these for the hysteresis plots** |
 
-### `subject_N_ecg_strip_rest.csv` / `_peak.csv` — 10 s excerpts (~28 KB)
+### `strips/subject_N_ecg_strip_rest.csv` / `_peak.csv` — 10 s excerpts (~28 KB)
 Exact slices of the full ECG file, so `sample_idx` is the **same global row index** the
 `*_sample_100hz` columns use — markers need no offset in the strips either
 (`rest` = rows 500–1499, `peak` = rows 59 500–60 499). For showing real P-QRS-T morphology — the full 20 min
@@ -68,3 +68,30 @@ exercise ramp, `peak` is centred on peak HR.
   `rr_ms` / `qt_ms` by a median of 2–4 ms.
 - **Size**: the ECG CSVs gzip to roughly a third. Serve them compressed, or load a strip
   first and fetch the full trace on demand.
+
+## Web build
+
+This folder is the *source* for the interactive page at `/projects/qt-rr-dynamics/`.
+It is excluded from the Jekyll build (see `exclude:` in `_config.yml`) and is never
+published; the browser gets a compact generated payload instead.
+
+Regenerate that payload after changing any CSV here:
+
+```
+python3 scripts/projects/build_qtrr_data.py          # writes the payload + validation report
+python3 scripts/projects/build_qtrr_data.py --check  # verifies the committed payload is current
+```
+
+Output (committed, because GitHub Pages runs no build step of ours):
+
+| file | contents |
+|---|---|
+| `assets/projects/qt-rr-dynamics/data/meta.json` | per-subject axis ranges, counts, annotation-quality summary |
+| `.../subject_N/beats.json` | all beat columns incl. the four landmark arrays; missing values are `null` |
+| `.../subject_N/ecg_int16.bin` | ECG as little-endian int16 at 0.001 mV/LSB, 100 Hz, no timestamps |
+
+The build asserts the sampling grid, index bounds, array lengths, the phase boundary
+(`exercise` iff `t_s <= 600`), strictly increasing beat times, finite smoothed values,
+int16 round-trip error within half an LSB, and byte-identical output on a rebuild. Beats
+with unusable ECG annotations are **reported, not dropped** — they keep their smoothed
+hysteresis values.

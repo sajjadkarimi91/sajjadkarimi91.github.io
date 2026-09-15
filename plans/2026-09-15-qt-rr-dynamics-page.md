@@ -1,11 +1,12 @@
 # Plan v2 — Interactive QT–RR Dynamics page (CinC 2026, Abstract #257)
 
-Status: **revised draft for final review — nothing implemented, moved, committed or deployed**
+Status: **IMPLEMENTED on branch `feat/projects-qtrr` — built and verified locally, not committed, not pushed, not deployed.**
+See §12 for what changed during implementation and §13 for verification results.
 Date: 2026-09-15 (v2, supersedes v1 of the same date)
 Incorporates: your review of v1, the updated beat CSVs with QRS-onset / T-peak / T-end columns, and `mims2_tamp_exercise_scatter.m` as the styling reference (§2.1)
 Target URL: `https://sajjadkarimi.com/projects/qt-rr-dynamics/` · QR alias `https://sajjadkarimi.com/qtrr/`
 
-Awaiting your explicit implementation approval before any file is created or moved.
+Awaiting your approval of this preview before anything is committed, pushed or deployed.
 
 ---
 
@@ -447,3 +448,41 @@ Minor preferences taken as defaults without asking: loop **on**; speed **10×**;
 **B2 — Local full-preview toolchain.** Layer 1 (static harness) works today and needs nothing from you. For Layer 2 (Jekyll chrome, routes, redirect) system Ruby 2.6.10 is too old and Docker is absent. May I install Ruby 3.x via Homebrew/rbenv on your machine, should I install Docker Desktop instead, or do you want to run the Jekyll server yourself and have me verify against it?
 
 Everything else has a stated default and needs no answer. **I will not create, move, generate, commit or deploy anything until you approve.**
+
+---
+
+## 12. What changed during implementation
+
+Deviations from plan v2, each with the reason.
+
+| # | plan v2 said | shipped | why |
+|---|---|---|---|
+| 1 | ECG default = **fixed full range**, with a "Fit T-wave" opt-in | **default = robust fit with explicit clipping indicators**; "Full-range ECG" is the opt-in | at full record range the T wave — the subject of the page — was a couple of pixels tall. Your review sanctioned either "fixed full-range scaling **or** explicit clipping indicators with a full-range option"; this is the second option. Clipping is still never silent: excursions are counted, marked with chevrons on the exceeded edge and named in a chip. |
+| 2 | one stylesheet `qt-rr-dynamics/css/app.css` | split into `assets/projects/projects.css` (shell + hub cards) and `qt-rr-dynamics/css/app.css` (panels) | the hub uses the `archive` layout and so never loaded the app stylesheet; the cards rendered unstyled. |
+| 3 | no shared includes touched | added an **opt-in** block to `_includes/head/custom.html`, guarded by `{% if page.projects_css %}` | that file is the theme's designated customisation hook and already carries site link tags. Nothing renders differently on any page that does not set the flag. |
+| 4 | overlay scan from "the last beat with `tOff >= s0`" | **full scan of all beats** per ECG refresh, markers and bands checked independently | your review, and it is cheap: under 2000 beats, only on re-latch. |
+| 5 | data lived in `webpage_mims2_public/` (untracked) | `git mv` to `data/mims2-qtrr/` | you had committed it in `a1e848e`, so the move preserves history. |
+| 6 | Jekyll 4 / `github-pages` gem for local preview | **Jekyll 3.9.5** installed user-local (`gem install --user-install`) | system Ruby is 2.6.10 and modern gems require >= 2.7/3.0+. Jekyll 3.9 is also what GitHub Pages actually pins, so it is closer to the deployment target. No system Ruby change, no Docker. |
+| 7 | — | `jemoji` and `jekyll-gist` could not be installed on Ruby 2.6 | the local build drops them from `plugins:` via a temporary config. Neither affects layout, routing, redirects or these pages; both remain in the committed `_config.yml` for the real Pages build. **This is the one part of the build that differs from production.** |
+
+Bugs found and fixed while verifying (each was real, not cosmetic):
+
+- **Theme race.** `watchTheme` was registered after the first `await`, so the site's own script setting `data-theme="dark"` during loading was missed and every panel drew with the light palette on a dark page. The observer is now registered before any await, and the palette is re-read at the atomic subject swap.
+- **Serif axis labels.** The palette read `font-family` from `<html>`, which computes to **Times**; the template sets its typeface on `<body>`. Canvas labels now read the body font.
+- **`?t=` was clobbered.** The first `selectSubject()` wrote the URL before `readTimeParam()` ran, so a shared link always opened at 00:00. The incoming time is now captured once, before any load.
+- **`setPointerCapture` could abort a seek.** It throws for some pointer sources; it is now guarded so a failure cannot prevent scrubbing.
+- **Clipped edge tick labels** and a **legend sitting on the data** — the last x-tick is now kept inside the panel and the hysteresis legend is placed in whichever corner the loop leaves emptiest.
+
+## 13. Verification results
+
+**Build:** full Jekyll build succeeds against the real `_config.yml`. Routes `/projects/`, `/projects/qt-rr-dynamics/` and the `/qtrr/` redirect all serve; asset URLs resolve to `https://sajjadkarimi.com/...` as the rest of the site does; `data/`, `plans/`, `scripts/` and `dev.html` are all absent from the output.
+
+**Data pipeline:** all validations pass; output is byte-identical on rebuild (`--check` verifies the committed payload). Payload: `beats.json` 138.2 / 101.1 KB, `ecg_int16.bin` 234.4 KB each, `meta.json` 1.9 KB.
+
+**56 automated checks, all passing**, driven through the Chrome DevTools Protocol against the real built site:
+
+- *Playback and sync (21):* 10x rate accuracy; ECG re-latch every ~3.0 s at both 1x and 10x (wall-clock, not data-time); lag 3.0 s at 1x and 29.7 s at 10x; seeking forward/backward while playing and paused; no drift while paused; both endpoints; loop wrap; stop-at-end with loop off; keyboard stepping; rapid subject switching landing atomically on one subject; URL state and invalid-parameter fallback.
+- *Data semantics (17):* every case from your review — S1 beats 44, 475, 483, 510, 537, 771, 874, 965, 1924 and S2 beat 1377 — plus the tie drawing one combined glyph, suppressed beats keeping finite smoothed values, no null ever reaching an index, bands crossing either window edge with true endpoints preserved, a beat contributing a band while its R-peak is outside the window, and confirmation that reconstructed QT differs from `qt_ms` (1539/1894 beats, max 8 ms).
+- *Integration (18):* blocked-fetch error state with a working Retry and the URL kept to console diagnostics; hidden tab accruing no time; theme redraw; body-font check; resize; no horizontal scroll at 700 px or 390 px; sticky mobile controls with >= 44 px targets; touch drag; hub and nav; four existing pages still rendering; `/qtrr/` redirect.
+
+**Not verified:** the live GitHub Pages build itself, and the two plugins that could not be installed locally (§12 row 7).
