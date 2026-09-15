@@ -85,7 +85,7 @@ redirect_from:
     </div>
     <p class="qtrr-clock"><span id="qtrr-time">00:00</span> <span class="qtrr-clock__total">/ 20:00</span></p>
     <label class="qtrr-toggle"><input type="checkbox" id="qtrr-loop" checked> Loop</label>
-    <label class="qtrr-toggle"><input type="checkbox" id="qtrr-measure"> Show measurements</label>
+    <label class="qtrr-toggle"><input type="checkbox" id="qtrr-measure" checked> Show measurements</label>
   </div>
 
   <details class="qtrr-details">

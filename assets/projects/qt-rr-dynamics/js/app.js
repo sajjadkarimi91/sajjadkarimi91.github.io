@@ -50,7 +50,9 @@ async function start(root) {
   };
 
   const options = {
-    showMeasurements: false,
+    /* On by default: the markers are the point of the ECG panel. Must stay in
+       step with the `checked` attribute on #qtrr-measure in the page markup. */
+    showMeasurements: true,
     showScatter: false,
     showTrail: false,
     trailSeconds: 8,
