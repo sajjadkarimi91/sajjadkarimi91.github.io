@@ -1,0 +1,2 @@
+subject,source,ecg_fs_hz,window_min,rr_at_peak_ms,n_beats,n_ecg_samples,n_exercise,n_recovery
+2,physical,100,10,595.71,1394,120001,782,612
